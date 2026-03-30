@@ -1,112 +1,167 @@
-# Indian Corporate Law Dataset 🇮🇳⚖️
+AI LEGAL ASSISTANT FOR INDIAN CORPORATE LAW
 
-A structured raw dataset of major Indian Corporate Laws designed for AI-powered legal search, summarization, and analytics systems.
+--------------------------------------------------
 
----
+1. PROJECT OVERVIEW
 
-## 📌 Project Overview
+This project is an AI-powered Legal Assistant built using Retrieval-Augmented Generation (RAG). It uses structured datasets from Indian Corporate Laws (Companies Act, 2013) to answer legal queries.
 
-This project focuses on extracting official Bare Act texts of Indian corporate legislations and converting them into machine-readable formats for Legal Tech applications.
+The system allows users to:
+- Ask legal questions
+- Retrieve relevant sections
+- Get simplified AI explanations
 
-The dataset serves as a foundational layer for building:
+--------------------------------------------------
 
-- AI Legal Summarizers
-- Semantic Legal Search Engines
-- Corporate Law Research Tools
-- Legal Chatbots
+2. SYSTEM ARCHITECTURE
 
----
-## 🧠 AI Legal Assistant System
-
-This project also includes an AI-powered legal assistant built using Retrieval-Augmented Generation (RAG).
-
-### 🔹 Features
-- Ask questions about Companies Act
-- Retrieve relevant sections using FAISS
-- Generate simplified explanations using LLM (Mistral via Ollama)
-
-### 🔹 Architecture
-
-User Query  
-↓  
-Vector Search (FAISS)  
-↓  
-Context Retrieval  
-↓  
-LLM (Mistral)  
-↓  
+User Query
+    ↓
+Sentence Transformer (Embeddings)
+    ↓
+FAISS (Vector Database)
+    ↓
+Relevant Section Retrieval
+    ↓
+LLM (Mistral via Ollama)
+    ↓
 Final Answer
 
-## 📚 Covered Legislations
+--------------------------------------------------
 
-- Companies Act, 2013  
-- Insolvency and Bankruptcy Code, 2016  
-- Limited Liability Partnership Act, 2008  
-- Competition Act, 2002  
-- SEBI Act, 1992  
+3. FEATURES
 
-*(Currently starting with raw extraction. Structured parsing in progress.)*
+- Legal Question Answering
+- Exact Section Lookup
+- Semantic Search using FAISS
+- AI-based Explanation using LLM
+- Fast Local Execution (No API cost)
 
----
+--------------------------------------------------
 
-## 🛠 Tech Stack
+4. TECH STACK
 
+Core Technologies:
 - Python 3
+- Sentence Transformers
+- FAISS
+- Ollama
+- Mistral Model
+- JSON Dataset
+
+Data Processing:
 - pdfplumber
-- JSON
-- Git & GitHub
 
----
+--------------------------------------------------
 
-## 📂 Project Structure
+5. PROJECT STRUCTURE
 
-corporate_law_dataset/
-│
-├── act.pdf
-├── main.py
-├── output/
-│ └── raw_text.txt
-├── data/
-│ └── processed/
-└── README.md
+ai-legal-assistant/
 
+main.py
+build_section_dataset.py
+extract_section_titles.py
+pdf_extract.py
 
----
+output/
+    companies_act_dataset.json
 
-## 🚀 How to Run
+requirements.txt
+README.txt
+.gitignore
 
-1️⃣ Create Virtual Environment
+--------------------------------------------------
 
+6. SETUP INSTRUCTIONS
 
-2️⃣ Install Dependencies
+Step 1: Clone Repository
 
+git clone <your-repo-link>
+cd ai-legal-assistant
 
-3️⃣ Run Extraction Script
+Step 2: Create Virtual Environment
 
+python3 -m venv venv
+source venv/bin/activate
 
-Extracted text will be saved inside the `output/` folder.
+Step 3: Install Dependencies
 
----
+pip install -r requirements.txt
 
-## 🎯 Future Improvements
+Step 4: Install Ollama
 
-- Section-wise parsing
-- Chapter classification
-- Amendment tracking
-- Case law integration (NCLT, Supreme Court)
-- Vector embeddings for semantic search
-- MongoDB integration
-- REST API for AI legal assistant
+curl -fsSL https://ollama.com/install.sh | sh
 
----
+Step 5: Download Model
 
-## ⚖️ Disclaimer
+ollama pull mistral
 
-All legislative texts are sourced from official government portals such as India Code and the Ministry of Corporate Affairs. This project is intended for educational and research purposes only.
+Step 6: Run Project
 
----
+python main.py
 
-### 👨‍💻 Author
+--------------------------------------------------
 
-Kritik Kaushik  
-AI Legal Dataset Initiative
+7. EXAMPLE QUERIES
+
+What is Section 247?
+Explain quorum requirements
+What are duties of auditors?
+
+--------------------------------------------------
+
+8. KEY IMPROVEMENTS
+
+- Chunked embeddings for better search accuracy
+- Hybrid search (Exact + Semantic)
+- Prompt engineering for structured answers
+- Switched from DeepSeek to Mistral for speed
+- Optimized context size for faster responses
+
+--------------------------------------------------
+
+9. COMMON ERRORS AND FIXES
+
+Error: ModuleNotFoundError
+Fix: pip install -r requirements.txt
+
+Error: ollama command not found
+Fix: Install Ollama and restart terminal
+
+Error: model 'mistral' not found
+Fix: ollama pull mistral
+
+Error: Slow response
+Fix: Use mistral or phi3 instead of deepseek-r1
+
+Error: Chinese output
+Fix: Use mistral model
+
+Error: search not defined
+Fix: Ensure functions are defined above main block
+
+Error: numpy/faiss not found
+Fix: Activate virtual environment and reinstall packages
+
+--------------------------------------------------
+
+10. FUTURE IMPROVEMENTS
+
+- Chat UI (Streamlit)
+- PDF Upload and Analysis
+- Legal Risk Detection
+- LangChain Integration
+- Deployment as Web Application
+
+--------------------------------------------------
+
+11. DISCLAIMER
+
+All legal texts are sourced from official government portals such as India Code and MCA. This project is for educational and research purposes only.
+
+--------------------------------------------------
+
+12. AUTHOR
+
+Kritik Kaushik
+AI Legal Systems & RAG Engineering
