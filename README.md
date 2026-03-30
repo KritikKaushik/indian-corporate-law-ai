@@ -16,6 +16,26 @@ The dataset serves as a foundational layer for building:
 - Legal Chatbots
 
 ---
+## 🧠 AI Legal Assistant System
+
+This project also includes an AI-powered legal assistant built using Retrieval-Augmented Generation (RAG).
+
+### 🔹 Features
+- Ask questions about Companies Act
+- Retrieve relevant sections using FAISS
+- Generate simplified explanations using LLM (Mistral via Ollama)
+
+### 🔹 Architecture
+
+User Query  
+↓  
+Vector Search (FAISS)  
+↓  
+Context Retrieval  
+↓  
+LLM (Mistral)  
+↓  
+Final Answer
 
 ## 📚 Covered Legislations
 
