@@ -45,3 +45,8 @@ transformers==4.57.6
 typing-inspection==0.4.2
 typing_extensions==4.15.0
 urllib3==2.6.3
+Flask==3.0.0
+Flask-CORS==4.0.0
+python-dotenv==1.0.0
+Werkzeug==3.0.0
+python-docx==1.0.0
