@@ -24,6 +24,7 @@ def extract_titles(input_path="output/raw_text.txt", output_path="output/section
             "section_number": number,
             "section_title": title.strip()
         })
+        
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(sections, f, indent=4)
