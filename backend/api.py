@@ -7,7 +7,7 @@ import pdfplumber
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app) 
 
 UPLOAD_FOLDER      = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf', 'txt', 'docx'}
