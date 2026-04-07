@@ -5,7 +5,7 @@ import json
 def extract_titles(input_path="output/raw_text.txt", output_path="output/section_titles.json"):
     """Extract section numbers and titles from raw text"""
     with open(input_path, "r", encoding="utf-8") as f:
-        text = f.read()
+        text = f.read() 
 
     # get only the SECTIONS index block
     start = text.find("SECTIONS")
