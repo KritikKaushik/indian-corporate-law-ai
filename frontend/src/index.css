@@ -1,50 +1,66 @@
 @import "tailwindcss";
 
-/* Hide scrollbar while keeping functionality */
-::-webkit-scrollbar {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
   width: 0;
   height: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+::selection {
+  background: rgba(249, 115, 22, 0.3);
+  color: inherit;
 }
 
-::-webkit-scrollbar-thumb {
-  background: transparent;
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.25; transform: scale(0.75); }
+  50% { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
 }
 
-/* For Firefox */
-* {
-  scrollbar-width: none;
+.dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
 }
-
-/* File Upload Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f97316; 
+  animation: pulse-dot 1.2s ease-in-out infinite;
 }
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-out;
-}
-
-.animate-slideUp {
-  animation: slideUp 0.4s ease-out forwards;
-  opacity: 0;
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(163, 163, 163, 0.1) 25%,
+    rgba(163, 163, 163, 0.2) 50%,
+    rgba(163, 163, 163, 0.1) 75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
 }
