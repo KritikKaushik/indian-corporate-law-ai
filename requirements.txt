@@ -1,34 +1,43 @@
-# ── Web framework ─────────────────────────────────────────────────────────────
+# ── Web framework ─────────────────────────────────────────────
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
 python-multipart==0.0.9
 
-# ── Database ──────────────────────────────────────────────────────────────────
+# ── Database ─────────────────────────────────────────────────
 motor==3.5.1
 pymongo==4.8.0
 
-# ── Validation / serialisation ────────────────────────────────────────────────
-pydantic==2.8.2
-pydantic[email]==2.8.2
+# ── Validation / Serialization ───────────────────────────────
+pydantic==2.12.5
+pydantic[email]==2.12.5
 email-validator==2.2.0
 
-# ── Auth / security ───────────────────────────────────────────────────────────
+# ── Auth / Security ──────────────────────────────────────────
 PyJWT==2.9.0
 bcrypt==4.2.0
+cryptography==46.0.5
 python-dotenv==1.0.1
 
-# ── PDF / document parsing ────────────────────────────────────────────────────
-pdfplumber==0.11.4
+# ── PDF / Document Parsing ───────────────────────────────────
+pdfplumber==0.11.8
 PyPDF2==3.0.1
 python-docx==1.1.2
+pdfminer.six==20251107
+pypdfium2==5.4.0
 
-# ── ML: embeddings & vector search ───────────────────────────────────────────
-sentence-transformers==3.0.1
-faiss-cpu==1.8.0
-numpy==1.26.4
+# ── ML: Embeddings & Vector Search ───────────────────────────
+sentence-transformers==5.1.2
+faiss-cpu==1.13.0
+numpy==2.0.2
+scikit-learn==1.6.1
+scipy==1.13.1
+torch==2.8.0
+transformers==4.57.6
 
-# ── Ollama LLM client ─────────────────────────────────────────────────────────
-ollama==0.3.2
+# ── LLM Client ───────────────────────────────────────────────
+ollama==0.6.1
 
-# ── Utilities ─────────────────────────────────────────────────────────────────
+# ── Utilities ────────────────────────────────────────────────
 aiohttp==3.10.5
+requests==2.32.5
+tqdm==4.67.3
