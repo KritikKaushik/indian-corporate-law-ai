@@ -632,6 +632,7 @@ This project was built collaboratively by a team of 6:
 | Name | GitHub | Role |
 |---|---|---|
 | Kritik Kaushik |(https://github.com/KritikKaushik) 
+| Ahana Gupta | (https://github.com/AhanaGupta004) 
 | Pankaj Singh Bisht | (https://github.com/PankajSinghBisht018) 
 | Harpreet Singh | (https://github.com/harpreetsingh21-cloud) 
 | Kamakshi Arora | (https://github.com/kamakshi-13) 
